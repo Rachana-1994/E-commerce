@@ -1,1 +1,4 @@
-<app-login-page></app-login-page>
+<span *ngIf="clicked; else loginheader"><app-menu></app-menu></span>
+<ng-template #loginheader>
+    <app-login-page></app-login-page>
+</ng-template>

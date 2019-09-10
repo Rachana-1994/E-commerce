@@ -9,8 +9,9 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { HeaderComponent } from './header/header.component';
 import { NewRegisterComponent } from './new-register/new-register.component';
 import { LoginPageComponent } from './login-page/login-page.component';
-import { MenuComponent } from './menu/menu.component';
 import { MenuHeaderComponent } from './menu-header/menu-header.component';
+import { MenuService } from './menu.service';
+import { MenuComponent } from './menu/menu.component';
 
 const appRoute: Routes =[
   { path : '', redirectTo: '/customer', pathMatch: 'full'},
@@ -28,8 +29,8 @@ const appRoute: Routes =[
     HeaderComponent,
     NewRegisterComponent,
     LoginPageComponent,
-    MenuComponent,
     MenuHeaderComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +38,7 @@ const appRoute: Routes =[
     RouterModule.forRoot(appRoute)
   ],
   exports:[RouterModule],
-  providers: [],
+  providers: [MenuService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
