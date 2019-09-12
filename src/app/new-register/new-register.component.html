@@ -1,21 +1,40 @@
+<form #customerForm="ngForm" (ngSubmit)="onRegister(customerForm)">
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
             <h3>New Registration</h3>
             <br>
-            <input type="text" class="form-control" placeholder="First Name">
-            <br>
-            <input type="text" class="form-control" placeholder="Last Name">
-            <br>
-            <input type="email" class="form-control" placeholder="Email">
-            <br>
-            <input type="date" class="form-control" placeholder="Date of Birth">
-            <br>
-            <input type="password" class="form-control" placeholder=" New Password">
-            <br>
-            <input type="text" class="form-control" placeholder="Adress">
-            <br>
-            <button class="btn btn-primary" (click)="onRegister()">Register</button>
+            <div class="form-group">
+                <input required id="firstName" name="firstName" type="text" class="form-control" placeholder="First Name"
+                 [(ngModel)]="firstName">
+            </div>
+
+            <div class="form-group">
+                <input required id="lastName" name="lastName"type="text" class="form-control" placeholder="Last Name"
+                [(ngModel)]="lastName">
+            </div>
+
+            <div class="form-group">
+                <input required id="email" name="email" type="email" class="form-control" placeholder="Email"
+                [(ngModel)]="email">
+            </div>
+
+            <div class="form-group">
+                <input required id="dateOfBirth" name="dateOfBirth" type="date" class="form-control" placeholder="Date of Birth"
+                [(ngModel)]="dateOfBirth">
+            </div>
+
+            <div class="form-group">
+                <input required id="password" name="password" type="password" class="form-control" placeholder=" New Password"
+                [(ngModel)]="password">
+            </div>
+
+            <div class="form-group">
+                <input required id="address" name="address" type="text" class="form-control" placeholder="Address"
+                [(ngModel)]="address">
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
         </div>
     </div>
 </div>
+</form>

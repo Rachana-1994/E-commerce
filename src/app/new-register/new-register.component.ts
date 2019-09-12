@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-new-register',
@@ -12,7 +13,8 @@ export class NewRegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRegister(){
+  onRegister(customerForm: NgForm):void{
+    console.log(customerForm);
     window.alert("New User Registered Successfuly");
     this._location.back();
   }
