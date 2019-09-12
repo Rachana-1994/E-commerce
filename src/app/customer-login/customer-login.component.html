@@ -1,10 +1,27 @@
+<form>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
             <h3>Welcome to E-Cart Customer Login!!</h3>
-            <input type="text" class="form-control" placeholder="Email">
             <br>
-            <input type="password" class="form-control" placeholder="Password">
+            <div class="form-group" [class.has-error]="email.invalid && email.touched">
+                <input required [email]="customer.email!==''" id="email" name="email" type="email" class="form-control" placeholder="Email"
+                [(ngModel)]="customer.email" #email="ngModel">
+                <span class="help-block" *ngIf="email.errors?.required && email.touched">
+                    Email is mandatory*
+                </span>
+                <span class="help-block" *ngIf="email.errors?.email && email.touched">
+                    Email is invalid*
+                </span>
+            </div>
+            <br>
+            <div class="form-group" [class.has-error]="password.invalid && password.touched">
+                <input required id="password" name="password" type="password" class="form-control" placeholder=" New Password"
+                [(ngModel)]="customer.password" #password="ngModel">
+                <span class="help-block" *ngIf="password.invalid && password.touched">
+                    Password is mandatory*
+                </span>
+            </div>
             <br>
             <button class="btn btn-primary" (click)="onLogin()">Login</button>
         </div>
@@ -18,3 +35,4 @@
         </div>
     </div>
 </div>
+</form>
