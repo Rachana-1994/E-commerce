@@ -8,7 +8,7 @@ import { CUSTOMERS } from '../mock-customer';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
-customer = CUSTOMERS;
+  customer = CUSTOMERS;
   constructor() { }
 
   ngOnInit() {

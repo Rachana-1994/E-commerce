@@ -4,5 +4,6 @@ export class Customer{
     email: string;
     dateOfBirth: Date;
     password: string;
+    confirmPassword: string;
     address: string;
 }

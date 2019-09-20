@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 import { NgForm } from '@angular/forms';
 
 import { CUSTOMERS } from '../mock-customer'
@@ -16,7 +16,7 @@ export class NewRegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRegister(){
+  onRegister() {
     window.alert("New User Registered Successfuly");
     this._location.back();
   }

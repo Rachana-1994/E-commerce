@@ -6,5 +6,6 @@ lastName: null,
 email: '',
 dateOfBirth: null,
 password: null,
+confirmPassword: null,
 address: null}
 ]

@@ -4,8 +4,8 @@
             <h3>Welcome to E-Cart Admin Login!!</h3>
             <br>
             <div class="form-group" [class.has-error]="email.invalid && email.touched">
-                <input required [email]="customer.email!==''" id="email" name="email" type="email" class="form-control" placeholder="Email"
-                [(ngModel)]="customer.email" #email="ngModel">
+                <input required [email]="customer.email!==''" id="email" name="email" type="email" class="form-control"
+                    placeholder="Email" [(ngModel)]="customer.email" #email="ngModel">
                 <span class="help-block" *ngIf="email.errors?.required && email.touched">
                     Email is mandatory*
                 </span>
@@ -15,8 +15,8 @@
             </div>
             <br>
             <div class="form-group" [class.has-error]="password.invalid && password.touched">
-                <input required id="password" name="password" type="password" class="form-control" placeholder=" New Password"
-                [(ngModel)]="customer.password" #password="ngModel">
+                <input required id="password" name="password" type="password" class="form-control"
+                    placeholder=" New Password" [(ngModel)]="customer.password" #password="ngModel">
                 <span class="help-block" *ngIf="password.invalid && password.touched">
                     Password is mandatory*
                 </span>
@@ -30,4 +30,3 @@
         </div>
     </div>
 </div>
-    

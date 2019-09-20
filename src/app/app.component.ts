@@ -8,8 +8,8 @@ import { MenuService } from './menu.service';
 })
 export class AppComponent {
   title = 'EcomWebsite';
-  clicked=false;
-  constructor(private menuservice: MenuService){
+  clicked = false;
+  constructor(private menuservice: MenuService) {
     this.menuservice.menupage.subscribe(
       () => this.clicked = true
     );

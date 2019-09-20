@@ -1,61 +1,73 @@
 <form #customerForm="ngForm" (ngSubmit)="onRegister(customer)">
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <h3>New Registration</h3>
-            <br>
-            <div class="form-group" [class.has-error]="firstName.invalid && firstName.touched">
-                <input required id="firstName" name="firstName" type="text" class="form-control" placeholder="First Name"
-                 [(ngModel)]="customer.firstName" #firstName="ngModel">
-                 <span class="help-block" *ngIf="firstName.invalid && firstName.touched">
-                     First name is mandatory*
-                 </span>
-            </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>New Registration</h3>
+                <br>
+                <div class="form-group" [class.has-error]="firstName.invalid && firstName.touched">
+                    <input required id="firstName" name="firstName" type="text" class="form-control"
+                        placeholder="First Name" [(ngModel)]="customer.firstName" #firstName="ngModel">
+                    <span class="help-block" *ngIf="firstName.invalid && firstName.touched">
+                        First name is mandatory*
+                    </span>
+                </div>
 
-            <div class="form-group" [class.has-error]="lastName.invalid && lastName.touched">
-                <input required id="lastName" name="lastName" type="text" class="form-control" placeholder="Last Name"
-                 [(ngModel)]="customer.lastName" #lastName="ngModel">
-                 <span class="help-block" *ngIf="lastName.invalid && lastName.touched">
-                     Last name is mandatory*
-                 </span>
-            </div>
+                <div class="form-group" [class.has-error]="lastName.invalid && lastName.touched">
+                    <input required id="lastName" name="lastName" type="text" class="form-control"
+                        placeholder="Last Name" [(ngModel)]="customer.lastName" #lastName="ngModel">
+                    <span class="help-block" *ngIf="lastName.invalid && lastName.touched">
+                        Last name is mandatory*
+                    </span>
+                </div>
 
-            <div class="form-group" [class.has-error]="email.invalid && email.touched">
-                <input required [email]="customer.email!==''" id="email" name="email" type="email" class="form-control" placeholder="Email"
-                [(ngModel)]="customer.email" #email="ngModel">
-                <span class="help-block" *ngIf="email.errors?.required && email.touched">
-                    Email is mandatory*
-                </span>
-                <span class="help-block" *ngIf="email.errors?.email && email.touched">
-                    Email is invalid*
-                </span>
-            </div>
+                <div class="form-group" [class.has-error]="email.invalid && email.touched">
+                    <input required [email]="customer.email!==''" id="email" name="email" type="email"
+                        class="form-control" placeholder="Email" [(ngModel)]="customer.email" #email="ngModel">
+                    <span class="help-block" *ngIf="email.errors?.required && email.touched">
+                        Email is mandatory*
+                    </span>
+                    <span class="help-block" *ngIf="email.errors?.email && email.touched">
+                        Email is invalid*
+                    </span>
+                </div>
 
-            <div class="form-group" [class.has-error]="dateOfBirth.invalid && dateOfBirth.touched">
-                <input required id="dateOfBirth" name="dateOfBirth" type="date" class="form-control" placeholder="Date of Birth"
-                [(ngModel)]="customer.dateOfBirth" #dateOfBirth="ngModel">
-                <span class="help-block" *ngIf="dateOfBirth.invalid && dateOfBirth.touched">
-                    Date of birth is mandatory*
-                </span>
-            </div>
+                <div class="form-group" [class.has-error]="dateOfBirth.invalid && dateOfBirth.touched">
+                    <input required id="dateOfBirth" name="dateOfBirth" type="date" class="form-control"
+                        placeholder="Date of Birth" [(ngModel)]="customer.dateOfBirth" #dateOfBirth="ngModel">
+                    <span class="help-block" *ngIf="dateOfBirth.invalid && dateOfBirth.touched">
+                        Date of birth is mandatory*
+                    </span>
+                </div>
 
-            <div class="form-group" [class.has-error]="password.invalid && password.touched">
-                <input required id="password" name="password" type="password" class="form-control" placeholder=" New Password"
-                [(ngModel)]="customer.password" #password="ngModel">
-                <span class="help-block" *ngIf="password.invalid && password.touched">
-                    Password is mandatory*
-                </span>
-            </div>
+                <div class="form-group" [class.has-error]="password.invalid && password.touched">
+                    <input required id="password" name="password" type="password" class="form-control"
+                        placeholder=" New Password" [(ngModel)]="customer.password" #password="ngModel">
+                    <span class="help-block" *ngIf="password.errors?.required && password.touched">
+                        Password is mandatory*
+                    </span>
+                </div>
 
-            <div class="form-group" [class.has-error]="address.invalid && address.touched">
-                <input required id="address" name="address" type="text" class="form-control" placeholder="Address"
-                [(ngModel)]="customer.address" #address="ngModel">
-                <span class="help-block" *ngIf="address.invalid && address.touched">
-                    Address is mandatory*
-                </span>
+                <div class="form-group" [class.has-error]="confirmPassword.invalid && confirmPassword.touched">
+                    <input required appConfirmEqualValidator="password" id="confirmPassword" name="confirmPassword"
+                        type="password" class="form-control" placeholder=" Confirm Password"
+                        [(ngModel)]="customer.confirmPassword" #confirmPassword="ngModel">
+                    <span class="help-block" *ngIf="confirmPassword.errors?.required && confirmPassword.touched">
+                        Password is mandatory*
+                    </span>
+                    <span class="help-block" *ngIf="confirmPassword.errors?.notEqual && confirmPassword.touched">
+                        Passwords doesn't match
+                    </span>
+                </div>
+
+                <div class="form-group" [class.has-error]="address.invalid && address.touched">
+                    <input required id="address" name="address" type="text" class="form-control" placeholder="Address"
+                        [(ngModel)]="customer.address" #address="ngModel">
+                    <span class="help-block" *ngIf="address.invalid && address.touched">
+                        Address is mandatory*
+                    </span>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="customerForm.invalid">Register</button>
             </div>
-            <button type="submit" class="btn btn-primary" [disabled]="customerForm.invalid">Register</button>
         </div>
     </div>
-</div>
 </form>

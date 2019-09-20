@@ -12,12 +12,12 @@ import { CUSTOMERS } from '../mock-customer';
 export class CustomerLoginComponent implements OnInit {
   customer = CUSTOMERS;
   constructor(private router: Router,
-              private menuservice: MenuService) { }
+    private menuservice: MenuService) { }
 
   ngOnInit() {
   }
 
-  onLogin(){
+  onLogin() {
     this.menuservice.menupage.emit();
     return this.router.navigate(['/menu']);
   }

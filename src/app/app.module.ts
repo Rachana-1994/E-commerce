@@ -12,13 +12,14 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { MenuHeaderComponent } from './menu-header/menu-header.component';
 import { MenuService } from './menu.service';
 import { MenuComponent } from './menu/menu.component';
+import { ConfirmEqualValidatorDirective } from './shared/required-validator.directive';
 
-const appRoute: Routes =[
-  { path : '', redirectTo: '/customer', pathMatch: 'full'},
-  { path : 'customer', component: CustomerLoginComponent},
-  { path : 'admin', component: AdminLoginComponent},
-  { path : 'register', component: NewRegisterComponent},
-  { path : 'menu', component:MenuComponent}
+const appRoute: Routes = [
+  { path: '', redirectTo: '/customer', pathMatch: 'full' },
+  { path: 'customer', component: CustomerLoginComponent },
+  { path: 'admin', component: AdminLoginComponent },
+  { path: 'register', component: NewRegisterComponent },
+  { path: 'menu', component: MenuComponent }
 ];
 
 @NgModule({
@@ -31,13 +32,14 @@ const appRoute: Routes =[
     LoginPageComponent,
     MenuHeaderComponent,
     MenuComponent,
+    ConfirmEqualValidatorDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoute)
   ],
-  exports:[RouterModule],
+  exports: [RouterModule],
   providers: [MenuService],
   bootstrap: [AppComponent]
 })
