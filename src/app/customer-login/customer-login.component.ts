@@ -18,7 +18,7 @@ export class CustomerLoginComponent implements OnInit {
   }
 
   onLogin() {
-    this.menuservice.menupage.emit();
-    return this.router.navigate(['/menu']);
+     this.menuservice.menupage.emit();
+     return this.router.navigate(['/menu']);
   }
 }
